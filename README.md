@@ -5,7 +5,7 @@ Avtorica: Anja Žavbi Kunaver
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2016/17
 
 ## Tematika
-V svojem projektu bom analizirala podatke olimpijskih iger. Najprej bom analizirala uspešnost držav na poletnih in zimskih olimpijskih igrah od leta 1896 do 2016 in sicer glede na število zlatih, srebrnih in bronastih medalj ter vseh skupaj. Upoštevala bom tudi število prebivalcev posamezne države. Tabele s podatki sem našla na wikipediji (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table) in Eurostatu.
+V svojem projektu bom analizirala podatke olimpijskih iger. Najprej bom analizirala uspešnost držav na poletnih in zimskih olimpijskih igrah od leta 1896 do 2016 in sicer glede na število zlatih, srebrnih in bronastih medalj ter vseh skupaj. Upoštevala bom tudi število prebivalcev posamezne države. Tabele s podatki sem našla na wikipediji (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table) in Eurostatu (oblika CSV).
 Posebej bom analizirala slovenske medaliste na olimpijskih igrah. Ti podatki so dostopni na http://www.olympic.si/olimpijski-wiki/olimpijske-igre. Zanimalo me bo število medalj v posameznih športih in število medalj posameznikov.
 
 ## Program
