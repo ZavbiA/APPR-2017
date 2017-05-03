@@ -1,7 +1,7 @@
 # 2. faza: Uvoz podatkov
 
 # Funkcija, ki uvozi število medalj po državah iz Wikipedije
-  uvozi.medalje <- function() {
+uvozi.medalje <- function() {
   link <- "https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table"
   stran <- html_session(link) %>% read_html()
   tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>%
@@ -13,7 +13,7 @@
 View(tabela)
   
 # Funkcija, ki uvozi podatke iz datoteke populacija.csv
-  uvozi.populacija <- function(populacija) {  
+uvozi.populacija <- function(populacija) {  
   return(data)}
   
 # Zapišimo podatke v razpredelnico medalje
