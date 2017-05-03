@@ -23,9 +23,9 @@ tabela[8] <- NULL
 tabela[8] <- NULL
 tabela <- tabela[-c(1, nrow(tabela)), ]
 
-colnames(tabela) <- c("države", "zimske_bronaste", "zimske_srebrne", "zimske_zlate", "poletne_bronaste",
+colnames(tabela) <- c("drzave", "zimske_bronaste", "zimske_srebrne", "zimske_zlate", "poletne_bronaste",
                       "poletne_srebrne", "poletne_zlate") 
-Encoding(tabela$države) <- "UTF-8"
-tabela$države <- tabela$države %>% strapplyc("([[:alpha:] ]+)") %>% sapply(. %>% .[1])
+Encoding(tabela$drzave) <- "UTF-8"
+tabela$drzave <- tabela$drzave %>% strapplyc("([[:alpha:] ]+)") %>% sapply(. %>% .[1])
   
 View(tabela)
