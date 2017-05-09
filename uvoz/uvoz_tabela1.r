@@ -29,5 +29,3 @@ sl <- locale("sl", decimal_mark = ".", grouping_mark = ",")
 for (col in c("poletne_bronaste", "poletne_srebrne", "poletne_zlate", "zimske_bronaste",              
               "zimske_srebrne", "zimske_zlate")) {  
   tabela[[col]] <- parse_number(tabela[[col]], na = "-", locale = sl)}
-
-View(tabela) 
