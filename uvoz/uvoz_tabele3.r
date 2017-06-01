@@ -27,10 +27,3 @@ colnames(slo.medalje) <- c("ime in priimek", "sport", "disciplina", "uvrstitev",
 #for (line in slo.medalje$igre) {
   #unlist(strsplit(line, split = " ", fixed = TRUE))
   #cat(line[1], line[-1])}
-
-
-
-
-summary(slo.medalje)
-View(slo.medalje)
-
