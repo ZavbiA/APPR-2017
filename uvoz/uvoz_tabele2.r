@@ -5,7 +5,7 @@ library(dplyr)
 library(tibble)
 library(reshape2)
 
-
+#tukaj opravim uvoz tabele drzav s stevilom prebivalcev v letih OI
 data <- read_csv("uvoz/populacija.csv",
                   skip = 4, locale = locale(encoding = "Windows-1250")) 
 
