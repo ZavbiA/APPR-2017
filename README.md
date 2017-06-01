@@ -5,9 +5,11 @@ Avtorica: Anja Žavbi Kunaver
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2016/17
 
 ## Tematika
-V svojem projektu bom analizirala podatke olimpijskih iger. Najprej bom analizirala uspešnost držav na poletnih in zimskih olimpijskih igrah od leta 1896 do 2016 in sicer glede na število zlatih, srebrnih in bronastih medalj ter vseh skupaj. Upoštevala bom tudi število prebivalcev posamezne države. Tabele s podatki sem našla na wikipediji (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table) ter v CSV obliki na http://data.worldbank.org/indicator/SP.POP.TOTL?end=2015&start=2013. Po vrsticah bodo podatki za vsako državo posebej in sicer število bronastih, srebrnih in zlatih medalj na poletnih in zimskih olimpijskih igrah. Posebej bo tabela s številom prebivalcev vsake države.
+V svojem projektu bom analizirala podatke olimpijskih iger. Najprej bom analizirala uspešnost držav na poletnih in zimskih olimpijskih igrah od leta 1896 do 2016 in sicer glede na število zlatih, srebrnih in bronastih medalj. Upoštevala bom tudi število prebivalcev posamezne države. Tabele s podatki sem našla na wikipediji (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table) ter v CSV obliki na http://data.worldbank.org/indicator/SP.POP.TOTL?end=2015&start=2013. Po vrsticah bodo podatki za vsako državo posebej in sicer število bronastih, srebrnih in zlatih medalj na poletnih in zimskih olimpijskih igrah. Posebej bo tabela s številom prebivalcev vsake države.
 
-Posebej bom analizirala slovenske medaliste na olimpijskih igrah. Ti podatki so dostopni na http://www.olympic.si/olimpijski-wiki/olimpijske-igre. Zanimali me bodo podatki glede na športno panogo. Torej bo tabela po stolpcih imela športne panoge, disciplino, ime in priimek športnika, leto osvojitve medalje ter mesto (1-3). Tukaj bo potrebno združiti več tabel skupaj in dodati stolpec z letnicami.
+Posebej bom analizirala slovenske medaliste na olimpijskih igrah. Ti podatki so dostopni na http://www.olympic.si/olimpijski-wiki/olimpijske-igre. Zanimali me bodo podatki glede na športno panogo. Torej bo tabela po stolpcih imela športne panoge, disciplino, ime in priimek športnika, mesto (1-3) ter letnica in vrsta OI (zimske/poletne). Tukaj bo potrebno združiti več tabel skupaj in dodati stolpec z letnicami.
+
+Dodala bom še četrto tabelo, ki bo vsebovala leto, kraj ter letni čas OI. Tabela je dostopna na spletni strani https://simple.wikipedia.org/wiki/Olympic_Games, potrebno pa jo je še urediti.
 
 ## Program
 
