@@ -4,7 +4,7 @@ library(readr)
 library(dplyr) 
 
 
-# Funkcija, ki uvozi stevilo medalj po drzavah iz Wikipedije 
+# Funkcija, ki uvozi tabele slovenskih medalistov
 link1 <- "http://www.olympic.si/olimpijski-wiki/olimpijske-igre" 
 stran1 <- html_session(link1) %>% read_html(encoding = "UTF-8") 
 tabele <- stran1 %>% html_nodes(xpath="//div[@id='vsebina259']/table")
