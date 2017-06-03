@@ -11,7 +11,7 @@ tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>%
 .[[1]] %>% html_table(dec = ".")
 
 #pobrisem odvecne stolpce in vrstice tabela
-[2] <- NULL
+tabela[2] <- NULL
 tabela[5] <- NULL
 tabela[5] <- NULL
 tabela[8] <- NULL
