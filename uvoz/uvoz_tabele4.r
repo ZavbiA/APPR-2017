@@ -7,4 +7,4 @@ library(dplyr)
 
 link4 <- "https://simple.wikipedia.org/wiki/Olympic_Games" 
 stran4 <- html_session(link4) %>% read_html() 
-tabela4 <- stran %>% html_nodes(xpath="//table[@class='new']") %>% .[[1]] %>% html_table(dec = ".")
+tabela4 <- stran4 %>% html_nodes(xpath="//table[@class='wikitable']") %>% .[[1]] %>% html_table()
