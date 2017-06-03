@@ -21,9 +21,8 @@ for (i in 1:ncol(slo.medalje)) {
 slo.medalje[1] <- NULL 
 colnames(slo.medalje) <- c("ime in priimek", "sport", "disciplina", "uvrstitev", "igre")
 
-
-#slo.medalje$igre <- slo.medalje$igre . %>% unlist(strsplit(line, split = " ", fixed = TRUE))
-
-#for (line in slo.medalje$igre) {
-  #unlist(strsplit(line, split = " ", fixed = TRUE))
-  #cat(line[1], line[-1])}
+slo.medalje <- slo.medalje %>%
+  mutate(uvrstitev = uvrstitev %>% strapplyc("^(.)") %>% unlist() %>% parse_number(),
+         tip = igre %>% strapplyc("^(.)") %>% unlist(),
+         leto = igre %>% strapplyc("([0-9]+)$") %>% unlist() %>% parse_number()) %>%
+  select(-igre)
