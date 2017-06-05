@@ -32,5 +32,5 @@ for (col in c("poletne_bronaste", "poletne_srebrne", "poletne_zlate", "zimske_br
   tabela[[col]] <- parse_number(tabela[[col]], na = "-", locale = sl)}
 
 tabela1.tidy <- melt(tabela, value.name = "stevilo") %>%
-  transmute(drzava, igre = variable %>% parse_character() %>% strapplyc("^(.*)_") %>% unlist(),
+  transmute(drzava, tip = variable %>% parse_character() %>% strapplyc("^(.*)_") %>% unlist(),
             medalja = variable %>% parse_character() %>%strapplyc("_(.*)$") %>% unlist(), stevilo)
