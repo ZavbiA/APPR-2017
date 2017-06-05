@@ -23,6 +23,6 @@ colnames(slo.medalje) <- c("ime in priimek", "sport", "disciplina", "uvrstitev",
 
 slo.medalje <- slo.medalje %>% 
   mutate(uvrstitev = uvrstitev %>% strapplyc("^(.)") %>% unlist() %>% parse_number(),
-          tip = igre %>% strapplyc("^(.)") %>% unlist(),
+          tip = igre %>% strapplyc("^(.)") %>% unlist() %>% { ifelse(. == "P", "poletne", "zimske") },
           leto = igre %>% strapplyc("([0-9]+)$") %>% unlist() %>% parse_number()) %>%
   select(-igre)
