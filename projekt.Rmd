@@ -24,39 +24,43 @@ V svojem projektu bom analizirala podatke olimpijskih iger. Najprej bom analizir
 # Obdelava, uvoz in čiščenje podatkov
 
 ```{r uvoz, echo=FALSE, message=FALSE}
-source("uvoz/uvoz.r", encoding = "UTF-8")
+source("uvoz/uvoz_tabele1.r", encoding = "UTF-8")
+source("uvoz/uvoz_tabele2.r", encoding = "UTF-8")
+source("uvoz/uvoz_tabele3.r", encoding = "UTF-8")
+source("uvoz/uvoz_tabele4.r", encoding = "UTF-8")
 ```
 
-Uvozili smo podatke o občinah v obliki CSV s statističnega urada ter v obliki HTML
-z Wikipedije. Poglejmo si začetka obeh uvoženih razpredelnic.
+Uvozila sem 4 tabele in sicer:
 
-```{r razpredelnice}
-kable(head(druzine))
-head(obcine)
+tabela1.tidy: Tabela v HTML obliki z wikipedije (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table).Da sem tabelo spravila v obliko tidy data, sem morala pobrisati nekaj stolpcev in vrstic, razbiti stolpce in odtraniti odvečne znake. Po stolpcih so imena držav, tip iger(poletne/zimske), lesk medalje in število le teh medalj.
+
+```{r razpredelnica1}
+kable(head(tabela1.tidy))
 ```
 
-Slika \ref{fig:histogram} prikazuje porazdelitev števila naselij v občinah.
+tabela2.tidy: S spletne strani http://data.worldbank.org/indicator/SP.POP.TOTL?end=2015&start=2013 sem snela tabelo v obliki CSV. Potrebno je bilo izbrisati odvečne podatke, številom določiti pravilen tip in razbiti stolpce. Tabela vsebuje stolpec z imenom države, stolpec z letom in pa stolpec s številom prebivalcev.
 
-```{r histogram, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Histogram števila naselij v občinah'}
-ggplot(obcine, aes(x = naselja)) + geom_histogram() +
-  ggtitle("Pogostost števila naselij") + xlab("Število naselij") + ylab("Število občin")
+```{r razpredelnica2}
+kable(head(tabela2.tidy))
 ```
+
+slo.medalje: Podatke o slovenskih uspehih na olimpijskih igrah sem našla na http://www.olympic.si/olimpijski-wiki/olimpijske-igre.Tu je bilo potrebno združiti več tabel skupaj in dodati stolpca z letnico OI in tipom (zimske/poletne). Tabela ima 6 stolpcev in sicer ime in priimek športnika, ki je osvojil medaljo, šport, disciplino, uvrstitev, tip iger in leto.
+
+```{r razpredelnica3}
+kable(head(slo.medalje))
+```
+
+tabela4.tidy: Zadnja tabela vsebuje podatke o kraju in času olimpijskih iger (https://simple.wikipedia.org/wiki/Olympic_Games).Tabelo je bilo seveda potrebno še preurediti. Sedaj ima po stolpcih leto, mesto, državo in tip iger (poletne/zimske).
+
+```{r razpredelnica4}
+kable(head(tabela4.tidy))
+```
+Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne primerjave pri analizi in vizualizaciji (preimenovala sem stolpce).
 
 ***
-
 # Analiza in vizualizacija podatkov
-
 ```{r vizualizacija, echo=FALSE, message=FALSE}
-source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
-```
 
-Slika \ref{fig:zemljevid} prikazuje povprečno velikost družine za vsako občino.
-
-```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini'}
-ggplot() + geom_polygon(data = left_join(zemljevid, povprecja, by = c("OB_UIME" = "obcina")),
-                        aes(x = long, y = lat, group = group, fill = povprecje)) +
-  ggtitle("Povprečno število otrok v družini") + xlab("") + ylab("") +
-  guides(fill = guide_colorbar(title = "Povprečje"))
 ```
 
 ***
@@ -64,23 +68,6 @@ ggplot() + geom_polygon(data = left_join(zemljevid, povprecja, by = c("OB_UIME" 
 # Napredna analiza podatkov
 
 ```{r analiza, echo=FALSE, message=FALSE}
-source("analiza/analiza.r", encoding = "UTF-8")
+
 ```
-
-Slika \ref{fig:graf} prikazuje povezavo med številom naselij in površino občine.
-
-```{r graf, echo=FALSE, fig.align='center', fig.cap='Povezava med številom naselij in površino občine'}
-ggplot(inner_join(obcine, data.frame(obcina = names(skupine),
-                                     skupina = factor(skupine)), by = "obcina")
-, aes(x = povrsina, y = naselja, color = skupina, size = prebivalci/1000)) + geom_point() +
-  ggtitle("Število naselij glede na površino občine") +
-  xlab(expression("Površina (km"^2 * ")")) + ylab("Št. naselij") +
-  guides(color = guide_legend(title = "Skupina"),
-         size = guide_legend(title = "Prebivalci (* 1000)"))
-```
-
 ***
-
-```{r shiny, echo = FALSE}
-shinyAppDir("shiny", options=list(width="100%", height=600))
-```
