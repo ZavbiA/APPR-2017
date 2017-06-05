@@ -36,3 +36,8 @@ data[21] <- NULL
 data[22] <- NULL
 data[22] <- NULL
 data[22] <- NULL
+
+tabela2.tidy <- melt(data, value.name = "stevilo_prebivalcev")
+names(tabela2.tidy) <- c("drzava","leto","stevilo_prebivalcev")
+tabela2.tidy$leto <- parse_number(tabela2.tidy$leto)
+tabela2.tidy$stevilo_prebivalcev <- parse_number(tabela2.tidy$stevilo_prebivalcev)
