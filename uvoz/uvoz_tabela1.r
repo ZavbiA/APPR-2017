@@ -22,11 +22,15 @@ tabela[8] <- NULL
 tabela[8] <- NULL
 tabela <- tabela[-c(1, nrow(tabela)), ]
 
-colnames(tabela) <- c("drzave", "poletne_bronaste", "poletne_srebrne", "poletne_zlate", "zimske_bronaste",
+colnames(tabela) <- c("drzava", "poletne_bronaste", "poletne_srebrne", "poletne_zlate", "zimske_bronaste",
                       "zimske_srebrne", "zimske_zlate")
-Encoding(tabela$drzave) <- "UTF-8"
-tabela$drzave <- tabela$drzave %>% strapplyc("([[:alpha:] ]+)") %>% sapply(. %>% .[1])
+Encoding(tabela$drzava) <- "UTF-8"
+tabela$drzava <- tabela$drzava %>% strapplyc("([[:alpha:] ]+)") %>% sapply(. %>% .[1])
 sl <- locale("sl", decimal_mark = ".", grouping_mark = ",")
 for (col in c("poletne_bronaste", "poletne_srebrne", "poletne_zlate", "zimske_bronaste",
               "zimske_srebrne", "zimske_zlate")) {
   tabela[[col]] <- parse_number(tabela[[col]], na = "-", locale = sl)}
+
+tabela1.tidy <- melt(tabela, value.name = "stevilo") %>%
+  transmute(drzava, igre = variable %>% parse_character() %>% strapplyc("^(.*)_") %>% unlist(),
+            medalja = variable %>% parse_character() %>%strapplyc("_(.*)$") %>% unlist(), stevilo)
