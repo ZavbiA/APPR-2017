@@ -7,7 +7,7 @@ library(reshape2)
 
 #tukaj opravim uvoz tabele drzav s stevilom prebivalcev v letih OI
 data <- read_csv("podatki/populacija.csv",
-                  skip = 4, locale = locale(encoding = "Windows-1250")) 
+                  skip = 4, locale = locale(encoding = "UTF-8")) 
 
 data[2] <- NULL
 data[2] <- NULL
