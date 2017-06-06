@@ -23,7 +23,7 @@ V svojem projektu bom analizirala podatke olimpijskih iger. Najprej bom analizir
 
 # Obdelava, uvoz in čiščenje podatkov
 
-```{r uvoz, echo=FALSE, message=FALSE}
+```{r uvoz, echo=FALSE, message=FALSE, warning = FALSE}
 source("uvoz/uvoz_tabela1.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele2.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele3.r", encoding = "UTF-8")
@@ -73,7 +73,7 @@ Spodnji točkast graf prikazuje razmerje osvojenih medalj posamezne države gled
 Iz grafa je razvidno, da je bilo na poletnih OI podeljenih dosti več medalj kot na zimskih. Razlog je v tem, da so bile zimske OI organizirane manjkrat kot poletne, prav tako pa je zimskih športov in disciplin manj kot poletnih. Le redkokatera država ima več osvojenih medalj v hladnih mesecih.
 Na grafu desno zgoraj izstopajo Združene države Amerike z največ osvojenimi medaljami na poletnih OI ter obojih skupaj. Največ zimskih medalj je do sedaj osvojila Norveška.
 
-```{r graf1}
+```{r graf1, echo = FALSE}
 ggplot(tabela1.tidy %>% group_by(drzava, tip) %>% summarise(skupaj = sum(stevilo)) %>%
          dcast(drzava ~ tip, value.var = "skupaj"), aes(x = poletne, y = zimske)) + geom_point()
 ```
