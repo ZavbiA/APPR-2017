@@ -32,7 +32,7 @@ source("uvoz/uvoz_tabele4.r", encoding = "UTF-8")
 
 Uvozila sem 4 tabele in sicer:
 
-tabela1.tidy: Tabela v HTML obliki z wikipedije (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table).Da sem tabelo spravila v obliko tidy data, sem morala pobrisati nekaj stolpcev in vrstic, razbiti stolpce in odtraniti odvečne znake. Po stolpcih so imena držav, tip iger(poletne/zimske), lesk medalje in število le teh medalj. Podatki so zbrani za vse OI od leta 1896 pa do 2016, ko so bile zadnje poletne olimpijske igre v Rio de Janeiro.
+tabela1.tidy: Tabela v HTML obliki z wikipedije (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table).Da sem tabelo spravila v obliko tidy data, sem morala pobrisati nekaj stolpcev in vrstic, razbiti stolpce in odtraniti odvečne znake. Po stolpcih so imena držav, tip iger(poletne/zimske), lesk medalje in število le teh medalj. Podatki so zbrani za vse OI od leta 1896 pa do 2016, ko so bile zadnje poletne olimpijske igre v Rio de Janeiro. Države, ki še niso osvojile nobene medalje na OI, so iz tabele izvzete.
 
 ```{r razpredelnica1}
 kable(head(tabela1.tidy))
