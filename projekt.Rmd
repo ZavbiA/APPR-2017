@@ -55,6 +55,7 @@ tabela4.tidy: Zadnja tabela vsebuje podatke o kraju in času olimpijskih iger (h
 ```{r razpredelnica4}
 kable(head(tabela4.tidy))
 ```
+
 Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne primerjave pri analizi in vizualizaciji (preimenovala sem stolpce).
 
 ***
