@@ -38,7 +38,7 @@ tabela1.tidy: Tabela v HTML obliki z wikipedije (https://en.wikipedia.org/wiki/A
 kable(head(tabela1.tidy))
 ```
 
-tabela2.tidy: S spletne strani http://data.worldbank.org/indicator/SP.POP.TOTL?end=2015&start=2013 sem snela tabelo v obliki CSV. Potrebno je bilo izbrisati odvečne podatke, številom določiti pravilen tip in razbiti stolpce. Tabela vsebuje stolpec z imenom države, stolpec z letom in pa stolpec s številom prebivalcev.
+tabela2.tidy: S spletne strani http://data.worldbank.org/indicator/SP.POP.TOTL?end=2015&start=2013 sem snela tabelo v obliki CSV. Potrebno je bilo izbrisati odvečne podatke, številom določiti pravilen tip in razbiti stolpce. Tabela vsebuje stolpec z imenom države, stolpec z letom in pa stolpec s številom prebivalcev. Naknadno sem morala popraviti še imena nekaterih držav, da so se ujemala s prvo tabelo in zemljevidom.
 
 ```{r razpredelnica2}
 kable(head(tabela2.tidy))
