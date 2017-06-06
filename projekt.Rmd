@@ -32,7 +32,7 @@ source("uvoz/uvoz_tabele4.r", encoding = "UTF-8")
 
 Uvozila sem 4 tabele in sicer:
 
-tabela1.tidy: Tabela v HTML obliki z wikipedije (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table).Da sem tabelo spravila v obliko tidy data, sem morala pobrisati nekaj stolpcev in vrstic, razbiti stolpce in odtraniti odvečne znake. Po stolpcih so imena držav, tip iger(poletne/zimske), lesk medalje in število le teh medalj.
+tabela1.tidy: Tabela v HTML obliki z wikipedije (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table).Da sem tabelo spravila v obliko tidy data, sem morala pobrisati nekaj stolpcev in vrstic, razbiti stolpce in odtraniti odvečne znake. Po stolpcih so imena držav, tip iger(poletne/zimske), lesk medalje in število le teh medalj. Podatki so zbrani za vse OI od leta 1896 pa do 2016, ko so bile zadnje poletne olimpijske igre v Rio de Janeiro.
 
 ```{r razpredelnica1}
 kable(head(tabela1.tidy))
@@ -59,12 +59,16 @@ Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne p
 
 ***
 # Analiza in vizualizacija podatkov
-```{r vizualizacija, echo=FALSE, message=FALSE}
 
+Spodnji zemljevid za države sveta prikazuje število osvojenih medalj na vseh dosedanjih olimpijskih igrah glede na število prebivalcev.
+
+```{r vizualizacija, echo=FALSE, message=FALSE}
+source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
 ```
 
 Spodnji točkast graf prikazuje razmerje osvojenih medalj posamezne države glede na poletne in zimske olimpijske igre. Na x osi meri število osvojenih medalj na poletnih OI za posamezno državo (seštevek bronastih, srebrnih in zlatih) ter na y osi število osvojenih medalj na zimskih OI. Vsi podatki so iz tabela1.tidy.
 Iz grafa je razvidno, da je bilo na poletnih OI podeljenih dosti več medalj kot na zimskih. Razlog je v tem, da so bile zimske OI organizirane manjkrat kot poletne, prav tako pa je zimskih športov in disciplin manj kot poletnih. Le redkokatera država ima več osvojenih medalj v hladnih mesecih.
+Na grafu desno zgoraj izstopajo Združene države Amerike z največ osvojenimi medaljami na poletnih OI ter obojih skupaj. Največ zimskih medalj je do sedaj osvojila Norveška.
 
 ```{r graf1}
 ggplot(tabela1.tidy %>% group_by(drzava, tip) %>% summarise(skupaj = sum(stevilo)) %>%
