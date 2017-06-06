@@ -34,3 +34,7 @@ for (col in c("poletne_bronaste", "poletne_srebrne", "poletne_zlate", "zimske_br
 tabela1.tidy <- melt(tabela, value.name = "stevilo") %>%
   transmute(drzava, tip = variable %>% parse_character() %>% strapplyc("^(.*)_") %>% unlist(),
             medalja = variable %>% parse_character() %>%strapplyc("_(.*)$") %>% unlist(), stevilo)
+
+tabela1.tidy$drzava <- gsub("Russia", "Russian Federation", tabela1.tidy$drzava)
+tabela1.tidy$drzava <- gsub("Great Britain", "United Kingdom", tabela1.tidy$drzava)
+tabela1.tidy$drzava <- gsub("Virgin Islands", "United States Virgin Islands", tabela1.tidy$drzava)
