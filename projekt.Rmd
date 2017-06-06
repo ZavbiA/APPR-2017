@@ -63,6 +63,14 @@ Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne p
 
 ```
 
+Spodnji točkast graf prikazuje razmerje osvojenih medalj posamezne države glede na poletne in zimske olimpijske igre. Na x osi meri število osvojenih medalj na poletnih OI za posamezno državo (seštevek bronastih, srebrnih in zlatih) ter na y osi število osvojenih medalj na zimskih OI. Vsi podatki so iz tabela1.tidy.
+Iz grafa je razvidno, da je bilo na poletnih OI podeljenih dosti več medalj kot na zimskih. Razlog je v tem, da so bile zimske OI organizirane manjkrat kot poletne, prav tako pa je zimskih športov in disciplin manj kot poletnih. Le redkokatera država ima več osvojenih medalj v hladnih mesecih.
+
+```{r graf1}
+ggplot(tabela1.tidy %>% group_by(drzava, tip) %>% summarise(skupaj = sum(stevilo)) %>%
+         dcast(drzava ~ tip, value.var = "skupaj"), aes(x = poletne, y = zimske)) + geom_point()
+```
+
 ***
 
 # Napredna analiza podatkov
