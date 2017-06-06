@@ -10,7 +10,7 @@ output:
 runtime: shiny
 ---
 
-```{r setup, echo=FALSE, results='hide', message=FALSE}
+```{r setup, echo=FALSE, results='hide', message=FALSE, warning = FALSE}
 # Uvoz vseh potrebnih knjižnic
 source("lib/libraries.r", encoding = "UTF-8")
 ```
