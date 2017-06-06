@@ -25,7 +25,7 @@ tabela <- tabela[-c(1, nrow(tabela)), ]
 colnames(tabela) <- c("drzava", "poletne_bronaste", "poletne_srebrne", "poletne_zlate", "zimske_bronaste",
                       "zimske_srebrne", "zimske_zlate")
 Encoding(tabela$drzava) <- "UTF-8"
-tabela$drzava <- tabela$drzava %>% strapplyc("([[:alpha:] ]+)") %>% sapply(. %>% .[1])
+tabela$drzava <- tabela$drzava %>% strapplyc("([[:alpha:]' ]+)") %>% sapply(. %>% .[1])
 sl <- locale("sl", decimal_mark = ".", grouping_mark = ",")
 for (col in c("poletne_bronaste", "poletne_srebrne", "poletne_zlate", "zimske_bronaste",
               "zimske_srebrne", "zimske_zlate")) {
