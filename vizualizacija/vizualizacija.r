@@ -16,5 +16,11 @@ zemljevid <- uvozi.zemljevid("http://www.naturalearthdata.com/http//www.naturale
                              "ne_50m_admin_0_countries", encoding = "Windows-1252") %>%
   pretvori.zemljevid()
 
-ggplot() + geom_polygon(data = zemljevid, aes(x=long, y=lat, group=group, fill=id)) +
-  guides(fill = FALSE)
+msp <- tabela1.tidy %>% group_by(drzava) %>% summarise(medalje = sum(stevilo)) %>%
+  inner_join(tabela2.tidy %>% filter(leto == 2014)) %>%
+  transmute(drzava = parse_factor(drzava, levels(zemljevid$name_long)),
+            msp = medalje / stevilo_prebivalcev)
+ggplot() + geom_polygon(data = zemljevid %>% left_join(msp, by = c("name_long" = "drzava")),
+                        aes(x=long, y=lat, group=group, fill = msp * 1000000)) +
+  guides(fill = guide_colorbar(title = "Medalje na milijon prebivalcev")) +
+  scale_fill_gradient(limits = c(0, 100))
