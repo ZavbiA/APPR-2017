@@ -24,7 +24,7 @@ V svojem projektu bom analizirala podatke olimpijskih iger. Najprej bom analizir
 # Obdelava, uvoz in čiščenje podatkov
 
 ```{r uvoz, echo=FALSE, message=FALSE}
-source("uvoz/uvoz_tabele1.r", encoding = "UTF-8")
+source("uvoz/uvoz_tabela1.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele2.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele3.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele4.r", encoding = "UTF-8")
