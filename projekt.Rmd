@@ -69,7 +69,7 @@ Spodnji zemljevid za države sveta prikazuje število osvojenih medalj na vseh d
 Daleč največje razmerje ima Liechtenstein, ki je premajhen, da bi bil viden na zemljevidu, je pa zato zgornja meja lestivice postavljena na 100. Na drugem mestu je Norveška, ki ima razmerje nekoliko pod 100.
 Države, ki niso osvojile še nobene olimpijske medalje, niso vnešene v razpredelnico, zato na zemljevidu niso posebej obarvane, saj je njihovo razmerje 0. Gre pa za relativno majhne države.
 
-```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid št.medalj na št.prebivalcev'}
+```{r zemljevid, echo=FALSE, fig.align='center'}
 g
 ```
 
