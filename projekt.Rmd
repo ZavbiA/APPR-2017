@@ -61,12 +61,16 @@ Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne p
 ***
 # Analiza in vizualizacija podatkov
 
+```{r vizualizacija, echo=FALSE, message=FALSE}
+source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
+```
+
 Spodnji zemljevid za države sveta prikazuje število osvojenih medalj na vseh dosedanjih olimpijskih igrah glede na število prebivalcev.
 Daleč največje razmerje ima Liechtenstein, ki je premajhen, da bi bil viden na zemljevidu, je pa zato zgornja meja lestivice postavljena na 100. Na drugem mestu je Norveška, ki ima razmerje nekoliko pod 100.
 Države, ki niso osvojile še nobene olimpijske medalje, niso vnešene v razpredelnico, zato na zemljevidu niso posebej obarvane, saj je njihovo razmerje 0. Gre pa za relativno majhne države.
 
-```{r vizualizacija, echo=FALSE, message=FALSE}
-source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
+```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid št.medalj na št.prebivalcev'}
+g
 ```
 
 Spodnji točkast graf prikazuje razmerje osvojenih medalj posamezne države glede na poletne in zimske olimpijske igre. Na x osi meri število osvojenih medalj na poletnih OI za posamezno državo (seštevek bronastih, srebrnih in zlatih) ter na y osi število osvojenih medalj na zimskih OI. Vsi podatki so iz tabela1.tidy.
