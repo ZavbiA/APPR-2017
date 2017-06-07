@@ -38,3 +38,4 @@ tabela1.tidy <- melt(tabela, value.name = "stevilo") %>%
 tabela1.tidy$drzava <- gsub("Russia", "Russian Federation", tabela1.tidy$drzava)
 tabela1.tidy$drzava <- gsub("Great Britain", "United Kingdom", tabela1.tidy$drzava)
 tabela1.tidy$drzava <- gsub("Virgin Islands", "United States Virgin Islands", tabela1.tidy$drzava)
+tabela1.tidy$drzava <- gsub("Côte d", "Côte d'Ivoire", tabela1.tidy$drzava)
