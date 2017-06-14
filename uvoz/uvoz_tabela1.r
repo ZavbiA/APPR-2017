@@ -38,3 +38,22 @@ tabela1.tidy <- melt(tabela, value.name = "stevilo") %>%
 tabela1.tidy$drzava <- gsub("Russia", "Russian Federation", tabela1.tidy$drzava)
 tabela1.tidy$drzava <- gsub("Great Britain", "United Kingdom", tabela1.tidy$drzava)
 tabela1.tidy$drzava <- gsub("Virgin Islands", "United States Virgin Islands", tabela1.tidy$drzava)
+
+#pobrisem vrstice, kjer se ponovijo imena drzav
+tabela1.tidy <- tabela1.tidy[-c(
+  46:49, 73:74, 197:200, 224:225, 348:351, 375:376, 499:502, 526:527, 650:653, 677:678, 801:804, 828:829), ]
+
+#dodam vrstice s sestevkom medalj
+tabela1.tidy <- tabela1.tidy %>%
+  add_row(drzava = "Germany", tip = "poletne", medalja = "bronaste", stevilo = 428) %>%
+  add_row(drzava = "Germany", tip = "poletne", medalja = "srebrne", stevilo = 442) %>%
+  add_row(drzava = "Germany", tip = "poletne", medalja = "zlate", stevilo = 476) %>%
+  add_row(drzava = "Germany", tip = "zimske", medalja = "bronaste", stevilo = 136) %>%
+  add_row(drzava = "Germany", tip = "zimske", medalja = "srebrne", stevilo = 135) %>%
+  add_row(drzava = "Germany", tip = "zimske", medalja = "zlate", stevilo = 106) %>%
+  add_row(drzava = "Republic of Korea", tip = "poletne", medalja = "bronaste", stevilo = 106) %>%
+  add_row(drzava = "Republic of Korea", tip = "poletne", medalja = "srebrne", stevilo = 100) %>%
+  add_row(drzava = "Republic of Korea", tip = "poletne", medalja = "zlate", stevilo = 112) %>%
+  add_row(drzava = "Republic of Korea", tip = "zimske", medalja = "bronaste", stevilo = 26) %>%
+  add_row(drzava = "Republic of Korea", tip = "zimske", medalja = "srebrne", stevilo = 18) %>%
+  add_row(drzava = "Republic of Korea", tip = "zimske", medalja = "zlate", stevilo = 11)
