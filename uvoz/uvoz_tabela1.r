@@ -3,6 +3,7 @@ library(rvest)
 library(gsubfn)
 library(readr)
 library(dplyr)
+library(tidyr)
 
 # Funkcija, ki uvozi stevilo medalj po drzavah iz Wikipedije
 link <- "https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table"
