@@ -4,6 +4,7 @@ library(readr)
 library(dplyr) 
 library(tibble)
 library(reshape2)
+library(tidyr)
 
 #tukaj opravim uvoz tabele drzav s stevilom prebivalcev v letih OI
 data <- read_csv("podatki/populacija.csv",
