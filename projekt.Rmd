@@ -84,7 +84,7 @@ ggplot(tabela1.tidy %>% group_by(drzava, tip) %>% summarise(skupaj = sum(stevilo
 ```
 
 Drugi graf prikazuje število osvojenih olimpijskih medalj Slovencev glede na šport. Razvidno je, da smo bili daleč najuspešnejši v športni gimnastiki. Omeniti pa velja, da je bila zadnja medalja v tej panogi osvojena leta 1968, ko je Miroslav Cerar zmagal na konju z ročaji. Največ medalj je za Slovenijo osvojil Leon Štukelj (6).
-Pri analizi grafa je še potrebno upoštevati, da so bile nekatere medalje osvojene ekipno (npr.pri športni gimnastiki, smučarskih skokih, košarki,...) in je bilo zato za ekipni uspeh podeljenih več medalj.
+Pri analizi grafa je še potrebno upoštevati, da so bile nekatere medalje osvojene ekipno (npr.pri športni gimnastiki, smučarskih skokih, veslanju,...) in je bilo zato za ekipni uspeh podeljenih več medalj.
 Sicer pa smo Slovenci že osvojili medalje v 17 športnih panogah in več različnih disciplinah, kar nakazuje na raznoliko razvitost športa pri nas. Iz grafa je še razvidno, da je bilo največ osvojenih medalj bronastega leska.
 
 ```{r graf2, echo = FALSE, fig.align='center'}
