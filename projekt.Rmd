@@ -61,7 +61,7 @@ Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne p
 ***
 # Analiza in vizualizacija podatkov
 
-```{r vizualizacija, echo=FALSE, message=FALSE}
+```{r vizualizacija, echo=FALSE, message=FALSE, warning = FALSE}
 source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
 ```
 
