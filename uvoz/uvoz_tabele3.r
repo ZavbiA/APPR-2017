@@ -26,3 +26,7 @@ slo.medalje <- slo.medalje %>%
           tip = igre %>% strapplyc("^(.)") %>% unlist() %>% { ifelse(. == "P", "poletne", "zimske") },
           leto = igre %>% strapplyc("([0-9]+)$") %>% unlist() %>% parse_number()) %>%
   select(-igre)
+
+slo.medalje$sport <- gsub("Judo", "judo", slo.medalje$sport)
+slo.medalje$sport <- gsub("kajak-kanu-slalom", "kajak-kanu slalom", slo.medalje$sport)
+slo.medalje$sport <- gsub("gimnastika športna", "gimnastika-športna", slo.medalje$sport)
