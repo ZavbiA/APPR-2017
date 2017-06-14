@@ -36,6 +36,7 @@ data[21] <- NULL
 data[22] <- NULL
 data[22] <- NULL
 data[22] <- NULL
+data <- data[-c(109), ] #vrstica not classified zbrisana
 
 tabela2.tidy <- melt(data, value.name = "stevilo_prebivalcev")
 names(tabela2.tidy) <- c("drzava","leto","stevilo_prebivalcev")
