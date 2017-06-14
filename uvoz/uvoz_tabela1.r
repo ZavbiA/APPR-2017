@@ -38,6 +38,11 @@ tabela1.tidy <- melt(tabela, value.name = "stevilo") %>%
 tabela1.tidy$drzava <- gsub("Russia", "Russian Federation", tabela1.tidy$drzava)
 tabela1.tidy$drzava <- gsub("Great Britain", "United Kingdom", tabela1.tidy$drzava)
 tabela1.tidy$drzava <- gsub("Virgin Islands", "United States Virgin Islands", tabela1.tidy$drzava)
+tabela1.tidy$drzava <- gsub("East Germany", "Germany", tabela1.tidy$drzava)
+tabela1.tidy$drzava <- gsub("West Germany", "Germany", tabela1.tidy$drzava)
+tabela1.tidy$drzava <- gsub("United Team of Germany", "Germany", tabela1.tidy$drzava)
+tabela1.tidy$drzava <- gsub("North Korea", "Republic of Korea", tabela1.tidy$drzava)
+tabela1.tidy$drzava <- gsub("South Korea", "Republic of Korea", tabela1.tidy$drzava)
 
 #pobrisem vrstice, kjer se ponovijo imena drzav
 tabela1.tidy <- tabela1.tidy[-c(
