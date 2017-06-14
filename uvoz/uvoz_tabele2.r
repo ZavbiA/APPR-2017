@@ -54,4 +54,7 @@ tabela2.tidy$drzava <- gsub("Iran, Islamic Rep.", "Iran", tabela2.tidy$drzava)
 tabela2.tidy$drzava <- gsub("Kyrgyz Republic", "Kyrgyzstan", tabela2.tidy$drzava)
 tabela2.tidy$drzava <- gsub("Macedonia, FYR", "Macedonia", tabela2.tidy$drzava)
 tabela2.tidy$drzava <- gsub("Virgin Islands (U.S.)", "United States Virgin Islands", tabela2.tidy$drzava)
+tabela2.tidy$drzava <- gsub("Korea", "Republic of Korea", tabela2.tidy$drzava)
 tabela2.tidy$drzava <- tabela2.tidy$drzava %>% strapplyc("([[:alpha:]' ]+)") %>% sapply(. %>% .[1])
+#zbrisem vse vrstice, ki imajo v stolpcu stevilo_prebivalcev vrednost NA ter dodam vrstico za Eritreo
+tabela2.tidy <- tabela2.tidy %>% drop_na() %>% add_row(drzava = "Eritrea", leto = 2014, stevilo_prebivalcev = 5100000)
