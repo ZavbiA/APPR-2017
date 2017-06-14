@@ -83,4 +83,16 @@ ggplot(tabela1.tidy %>% group_by(drzava, tip) %>% summarise(skupaj = sum(stevilo
          ggtitle("Število osvojenih medalj posamezne države")
 ```
 
+```{r graf2, echo = FALSE, fig.align='center'}
+ggplot(slo.medalje,
+       aes(x = reorder(sport, mapply(paste, uvrstitev, sport),
+                                    . %>% { -(length(.)^3 +
+                                                length(.) * length(.[grepl("^1", .)]) +
+                                                length(.[grepl("^2", .)])) }),
+                        fill = factor(uvrstitev))) + geom_bar() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  xlab("šport") + ylab("število medalj") + guides(fill = guide_legend(title = "Uvrstitev")) +
+  ggtitle("Število osvojenih medalj glede na šport") + scale_fill_manual(values=c("darkgoldenrod1", "darkgray", "lightsalmon4"))
+```
+
 ***
