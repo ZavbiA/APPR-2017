@@ -74,8 +74,8 @@ g + ggtitle("Zemljevid števila medalj držav")
 ```
 
 Spodnji točkast graf prikazuje razmerje osvojenih medalj posamezne države glede na poletne in zimske olimpijske igre. Na x osi meri število osvojenih medalj na poletnih OI za posamezno državo (seštevek bronastih, srebrnih in zlatih) ter na y osi število osvojenih medalj na zimskih OI. Vsi podatki so iz tabela1.tidy. Nekatere države, ki se mi zdijo posebej zanimive ali pomembne, sem označila na grafu.
-Iz grafa je razvidno, da je bilo na poletnih OI podeljenih dosti več medalj kot na zimskih. Razlog je v tem, da so bile zimske OI organizirane manjkrat kot poletne, prav tako pa je zimskih športov in disciplin manj kot poletnih. Le redkokatera država ima več osvojenih medalj v hladnih mesecih.
-Na grafu desno zgoraj izstopajo Združene države Amerike z največ osvojenimi medaljami na poletnih OI ter obojih skupaj. Največ zimskih medalj je do sedaj osvojila Norveška.
+Iz grafa je razvidno, da je bilo na poletnih OI podeljenih dosti več medalj kot na zimskih. Razlog je v tem, da so bile zimske OI organizirane manjkrat kot poletne, prav tako pa je zimskih športov in disciplin manj kot poletnih. Le redkokatera država ima več osvojenih medalj v hladnih mesecih. Taka primera sta na primer Avstrija in Norveška.
+Na grafu desno zgoraj izstopajo Združene države Amerike z največ osvojenimi medaljami na poletnih OI ter obojih skupaj. Največ zimskih medalj je do sedaj osvojila Nemčija.
 
 ```{r graf1, echo = FALSE}
 ggplot(tabela1.tidy %>% group_by(drzava, tip) %>% summarise(skupaj = sum(stevilo)) %>%
@@ -86,7 +86,7 @@ ggplot(tabela1.tidy %>% group_by(drzava, tip) %>% summarise(skupaj = sum(stevilo
          annotate("text", x = 2521, y = 282, label = "Združene države Amerike") +
          annotate("text", x = 494, y = 144, label = "Švedska") +
          annotate("text", x = 715, y = 109, label = "Francija") +
-         annotate("text", x = 1376, y = 347, label = "Nemčija") +
+         annotate("text", x = 1376, y = 377, label = "Nemčija") +
          annotate("text", x = 847, y = 26, label = "Velika Britanija") +
          annotate("text", x = 87, y = 218, label = "Avstrija") +
          annotate("text", x = 23, y = 15, label = "Slovenija") +
