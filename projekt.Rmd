@@ -67,7 +67,7 @@ source("vizualizacija/vizualizacija.r", encoding = "UTF-8")
 
 Spodnji zemljevid za države sveta prikazuje število osvojenih medalj na vseh dosedanjih olimpijskih igrah glede na število prebivalcev v letu 2014.
 Daleč največje razmerje ima Liechtenstein, ki je premajhen, da bi bil viden na zemljevidu, je pa zato zgornja meja lestivice postavljena na 100. Liechtensteinu sledijo vse tri skandinavske države - Norveška, Finska in Švedska. Na 5.mestu pa je zame nekoliko presenetljivo Madžarska.
-Države, ki niso osvojile še nobene olimpijske medalje, niso vnešene v razpredelnico, zato na zemljevidu niso posebej obarvane, saj je njihovo razmerje 0. Gre pa za relativno majhne države.
+Države, ki niso osvojile še nobene olimpijske medalje, niso vnešene v razpredelnico, zato na zemljevidu niso posebej obarvane, saj je njihovo razmerje 0.
 
 ```{r zemljevid, echo=FALSE, fig.align='center'}
 g + ggtitle("Zemljevid števila medalj držav")
