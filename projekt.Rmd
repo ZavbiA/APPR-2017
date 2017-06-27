@@ -107,7 +107,8 @@ ggplot(slo.medalje,
                         fill = factor(uvrstitev))) + geom_bar() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
   xlab("šport") + ylab("število medalj") + guides(fill = guide_legend(title = "Uvrstitev")) +
-  ggtitle("Število osvojenih medalj Slovencev glede na šport") + scale_fill_manual(values=c("darkgoldenrod1", "darkgray", "lightsalmon4"))
+ggtitle("Število osvojenih medalj Slovencev glede na šport") +
+scale_fill_manual(values=c("darkgoldenrod1", "darkgray", "lightsalmon4"))
 ```
 
 ***
