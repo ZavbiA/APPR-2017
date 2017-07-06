@@ -14,5 +14,4 @@ names(tabela5.tidy) <- c("mesto","leto","drzava","tip","st_dogodkov","st_nastopa
 tabela5.tidy <- tabela5[-c(1,17,18,34,35), ]
 tabela5.tidy$tip <- gsub("Summer", "P", tabela5.tidy$tip)
 tabela5.tidy$tip <- gsub("Winter", "Z", tabela5.tidy$tip)
-
-tabela5.tidy$cena_bilion_USD <- parse_number(tabela5.tidy$cena_bilion_USD)
+tabela5.tidy$stroski <- parse_number(tabela5.tidy$stroski)
