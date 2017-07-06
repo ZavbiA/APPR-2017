@@ -57,7 +57,7 @@ tabela4.tidy: Zadnja tabela vsebuje podatke o kraju in času olimpijskih iger (h
 kable(head(tabela4.tidy))
 ```
 
-tabela5.tidy: Kot zanimivost sem na koncu dodala še tabelo s podatki o številu dogodkov, številu udeležencev in stroških olimpijskih iger od leta 1960 dalje. Stroški so preračunani glede na ameriški dolar leta 2015.
+tabela5.tidy: Kot zanimivost sem na koncu dodala še tabelo s podatki o številu dogodkov, številu udeležencev in stroških olimpijskih iger od leta 1960 dalje. Stroški organizacije OI so podani v bilijonih dolarjev in sicer so preračunani glede na ameriški dolar leta 2015. V zadnjem stolpcu pri stroških z razlogom manjkajo podatki za 5 držav - Mehiški peso in Jugoslovanski dinar sta na primer utrpela hiperinflacijo, zaradi česar podatki niso relevantni.
 Tabelo sem dobila na spletnem naslovu: https://arxiv.org/ftp/arxiv/papers/1607/1607.04484.pdf. Ker gre za pdf datoteko, sem tabelo skopirala v Excel in shranila kot CSV.
 
 ```{r razpredelnica5}
