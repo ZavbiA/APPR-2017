@@ -28,6 +28,7 @@ source("uvoz/uvoz_tabela1.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele2.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele3.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele4.r", encoding = "UTF-8")
+source("uvoz/uvoz_tabele5.r", encoding = "UTF-8")
 ```
 
 Uvozila sem 4 tabele in sicer:
@@ -54,6 +55,13 @@ tabela4.tidy: Zadnja tabela vsebuje podatke o kraju in času olimpijskih iger (h
 
 ```{r razpredelnica4}
 kable(head(tabela4.tidy))
+```
+
+tabela5.tidy: Kot zanimivost sem na koncu dodala še tabelo s podatki o številu dogodkov, številu udeležencev in stroških olimpijskih iger od leta 1960 dalje. Stroški so preračunani glede na ameriški dolar leta 2015.
+Tabelo sem dobila na spletnem naslovu: https://arxiv.org/ftp/arxiv/papers/1607/1607.04484.pdf. Ker gre za pdf datoteko, sem tabelo skopirala v Excel in shranila kot CSV.
+
+```{r razpredelnica5}
+kable(head(tabela5.tidy))
 ```
 
 Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne primerjave pri analizi in vizualizaciji (preimenovala sem stolpce).
