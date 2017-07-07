@@ -66,7 +66,7 @@ Tabelo sem dobila na spletnem naslovu: https://arxiv.org/ftp/arxiv/papers/1607/1
 kable(head(tabela5.tidy))
 ```
 
-Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne primerjave pri analizi in vizualizaciji (preimenovala sem stolpce).
+Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne primerjave pri analizi in vizualizaciji (npr. preimenovala sem stolpce).
 
 ***
 # Analiza in vizualizacija podatkov
