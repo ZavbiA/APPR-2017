@@ -130,4 +130,18 @@ tabela5.tidy %>%
   ggtitle("Naraščanje števila dogodkov, števila udeležencev in stroškov")
 ```
 
+```{r graf4, echo = FALSE, fig.align='center'}
+tabela5.tidy %>%
+  ggplot(aes(x=leto, y=st_nastopajocih, colour=tip)) +
+  geom_line() + xlab("leto") + ylab("") +
+  ggtitle("Naraščanje števila udeležencev")
+```
+
+```{r graf5, echo = FALSE, fig.align='center', message=FALSE, warning = FALSE}
+tabela5.tidy %>%
+  ggplot(aes(x=leto, y=stroski, colour=tip)) +
+  geom_line() + xlab("leto") + ylab("") +
+  ggtitle("Naraščanje stroškov")
+```
+
 ***
