@@ -24,7 +24,7 @@ V svojem projektu bom analizirala podatke olimpijskih iger. Najprej bom analizir
 # Obdelava, uvoz in čiščenje podatkov
 
 ```{r uvoz, echo=FALSE, message=FALSE, warning = FALSE}
-source("uvoz/uvoz_tabela1.r", encoding = "UTF-8")
+source("uvoz/uvoz_tabele1.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele2.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele3.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele4.r", encoding = "UTF-8")
@@ -119,6 +119,15 @@ ggplot(slo.medalje,
   xlab("šport") + ylab("število medalj") + guides(fill = guide_legend(title = "Uvrstitev")) +
 ggtitle("Število osvojenih medalj Slovencev glede na šport") +
 scale_fill_manual(values=c("darkgoldenrod1", "darkgray", "lightsalmon4"))
+```
+
+Spodnji črtasti grafi prikazujejo trende naraščanja števila dogodkov, števila nastopajočih ter stroškov olimpijskih iger.
+
+```{r graf3, echo = FALSE, fig.align='center'}
+tabela5.tidy %>%
+  ggplot(aes(x=leto, y=st_dogodkov, colour=tip)) +
+  geom_line() + xlab("leto") + ylab("") +
+  ggtitle("Naraščanje števila dogodkov, števila udeležencev in stroškov")
 ```
 
 ***
