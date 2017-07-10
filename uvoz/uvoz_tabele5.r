@@ -18,3 +18,4 @@ tabela5.tidy$tip <- gsub("Winter", "zimske", tabela5.tidy$tip)
 tabela5.tidy$stroski <- parse_number(tabela5.tidy$stroski)
 tabela5.tidy$leto <- parse_number(tabela5.tidy$leto)
 tabela5.tidy[1] <- NULL
+tabela5.tidy[2] <- NULL
