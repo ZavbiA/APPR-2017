@@ -69,4 +69,4 @@ uvoz_tabel_wiki <- function(leto) {
 letnice <- c(2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016)
 
 skupna_tabela <- lapply(letnice,uvoz_tabel_wiki)
-bind_rows(skupna_tabela)
+skupna_tabela <- bind_rows(skupna_tabela)
