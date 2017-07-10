@@ -134,7 +134,7 @@ tabela5.tidy %>%
 tabela5.tidy %>%
   ggplot(aes(x=leto, y=st_nastopajocih, colour=tip)) +
   geom_line() + xlab("leto") + ylab("") +
-  ggtitle("Naraščanje števila udeležencev")
+  ggtitle("Naraščanje števila nastopajočih")
 ```
 
 ```{r graf5, echo = FALSE, fig.align='center', message=FALSE, warning = FALSE}
