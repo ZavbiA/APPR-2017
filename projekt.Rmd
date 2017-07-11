@@ -89,19 +89,19 @@ Na grafu desno zgoraj izstopajo Združene države Amerike z največ osvojenimi m
 
 ```{r graf1, echo = FALSE}
 ggplot(tabela1.tidy %>% group_by(drzava, tip) %>% summarise(skupaj = sum(stevilo)) %>%
-         dcast(drzava ~ tip, value.var = "skupaj"), aes(x = poletne, y = zimske)) +
-         geom_point(pch=16, col="darkblue") + ggtitle("Število osvojenih medalj posamezne države") +
-         annotate("text", x = 152, y = 329, label = "Norveška") +
-         annotate("text", x = 1010, y = 194, label = "Sovjetska zveza") +
-         annotate("text", x = 2521, y = 282, label = "Združene države Amerike") +
-         annotate("text", x = 494, y = 144, label = "Švedska") +
-         annotate("text", x = 715, y = 109, label = "Francija") +
-         annotate("text", x = 1376, y = 377, label = "Nemčija") +
-         annotate("text", x = 847, y = 26, label = "Velika Britanija") +
-         annotate("text", x = 87, y = 218, label = "Avstrija") +
-         annotate("text", x = 23, y = 15, label = "Slovenija") +
-         annotate("text", x = 541, y = 53, label = "Kitajska") +
-         annotate("text", x = 301, y = 170, label = "Kanada")
+         dcast(drzava ~ tip, value.var = "skupaj"), aes(x = poletne, y = zimske)) +
+   geom_point(pch=16, col="darkblue") + ggtitle("Število osvojenih medalj posamezne države") +
+   annotate("text", x = 152, y = 329, label = "Norveška") +
+   annotate("text", x = 1010, y = 194, label = "Sovjetska zveza") +
+   annotate("text", x = 2521, y = 282, label = "Združene države Amerike") +
+   annotate("text", x = 494, y = 144, label = "Švedska") +
+   annotate("text", x = 715, y = 109, label = "Francija") +
+   annotate("text", x = 1376, y = 377, label = "Nemčija") +
+   annotate("text", x = 847, y = 26, label = "Velika Britanija") +
+   annotate("text", x = 87, y = 218, label = "Avstrija") +
+   annotate("text", x = 23, y = 15, label = "Slovenija") +
+   annotate("text", x = 541, y = 53, label = "Kitajska") +
+   annotate("text", x = 301, y = 170, label = "Kanada")
 ```
 
 Drugi graf prikazuje število osvojenih olimpijskih medalj Slovencev glede na šport. Razvidno je, da smo bili daleč najuspešnejši v športni gimnastiki. Omeniti pa velja, da je bila zadnja medalja v tej panogi osvojena leta 1968, ko je Miroslav Cerar zmagal na konju z ročaji. Največ medalj je za Slovenijo osvojil Leon Štukelj (6).
