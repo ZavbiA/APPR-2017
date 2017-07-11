@@ -29,9 +29,10 @@ source("uvoz/uvoz_tabele2.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele3.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele4.r", encoding = "UTF-8")
 source("uvoz/uvoz_tabele5.r", encoding = "UTF-8")
+source("uvoz/uvoz_shiny.r", encoding = "UTF-8")
 ```
 
-Uvozila sem 4 tabele in sicer:
+Uvozila sem 6 tabel in sicer:
 
 tabela1.tidy: Tabela v HTML obliki z wikipedije (https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table).
 Da sem tabelo spravila v obliko tidy data, sem morala pobrisati nekaj stolpcev in vrstic, razbiti stolpce in odtraniti odvečne znake. Po stolpcih so imena držav, tip iger(poletne/zimske), lesk medalje in število le teh medalj. Podatki so zbrani za vse OI od leta 1896 pa do 2016, ko so bile zadnje poletne olimpijske igre v Rio de Janeiro. Države, ki še niso osvojile nobene medalje na OI, so iz tabele izvzete.
@@ -59,11 +60,17 @@ Tabelo je bilo seveda potrebno še preurediti. Sedaj ima po stolpcih leto, mesto
 kable(head(tabela4.tidy))
 ```
 
-tabela5.tidy: Kot zanimivost sem na koncu dodala še tabelo s podatki o številu dogodkov, številu udeležencev in stroških olimpijskih iger od leta 1960 dalje. Stroški organizacije OI so podani v bilijonih dolarjev in sicer so preračunani glede na ameriški dolar leta 2015. V zadnjem stolpcu pri stroških z razlogom manjkajo podatki za 5 držav - Mehiški peso in Jugoslovanski dinar sta na primer utrpela hiperinflacijo, zaradi česar podatki niso relevantni.
+tabela5.tidy: Kot zanimivost sem na dodala še tabelo s podatki o številu dogodkov, številu udeležencev in stroških olimpijskih iger od leta 1960 dalje. Stroški organizacije OI so podani v bilijonih dolarjev in sicer so preračunani glede na ameriški dolar leta 2015. V zadnjem stolpcu pri stroških z razlogom manjkajo podatki za 5 držav - Mehiški peso in Jugoslovanski dinar sta na primer utrpela hiperinflacijo, zaradi česar podatki niso relevantni.
 Tabelo sem dobila na spletnem naslovu: https://arxiv.org/ftp/arxiv/papers/1607/1607.04484.pdf. Ker gre za pdf datoteko, sem tabelo skopirala v Excel in shranila kot CSV.
 
 ```{r razpredelnica5}
 kable(head(tabela5.tidy))
+```
+
+skupna_tabela: Za delo v shiny aplikaciji sem naknadno uvozila še tabelo o številu osvojenih medalj najuspešnejših 10 držav vsakih iger 21.stoletja. Kot najboljše se štejejo tiste, ki so osvojile največ zlatih medalj. Na straneh wikipedije sem dobila 9 tabel - za vsake olimpijske igre posebej, ter jih združila v eno. Skupna tabela ima torej po stolpcih ime države, lesk medalje, število le teh medalj ter leto iger.
+
+```{r razpredelnica6}
+kable(head(skupna_tabela))
 ```
 
 Na koncu sem tabele še prilagodila, da se med seboj ujemajo zaradi medsebojne primerjave pri analizi in vizualizaciji (npr. preimenovala sem stolpce).
