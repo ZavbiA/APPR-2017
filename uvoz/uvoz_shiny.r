@@ -19,23 +19,23 @@ uvoz_tabel_wiki <- function(leto) {
   
   stran <- html_session(link) %>% read_html(encoding = "UTF-8")
   
-  if(leto==2016) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>% 
+  if(leto==2016) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>%
     .[[1]] %>% html_table(fill=TRUE)}
-  if(leto==2014) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>% 
+  if(leto==2014) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>%
     .[[1]] %>% html_table(dec = ".")}
-  if(leto==2012) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>% 
+  if(leto==2012) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>%
     .[[1]] %>% html_table(fill=TRUE)}
-  if(leto==2010) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>% 
+  if(leto==2010) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>%
     .[[1]] %>% html_table(fill=TRUE)}
-  if(leto==2008) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>% 
+  if(leto==2008) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>%
     .[[1]] %>% html_table(fill=TRUE)}
-  if(leto==2006) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>% 
+  if(leto==2006) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>%
     .[[1]] %>% html_table(fill=TRUE)}
-  if(leto==2004) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>% 
+  if(leto==2004) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>%
     .[[1]] %>% html_table(fill=TRUE)}
-  if(leto==2002) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>% 
+  if(leto==2002) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>%
     .[[1]] %>% html_table(fill=TRUE)}
-  if(leto==2000) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>% 
+  if(leto==2000) {tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable plainrowheaders']") %>%
     .[[1]] %>% html_table(fill=TRUE)}
   
   tabela[1] <- NULL
@@ -43,7 +43,8 @@ uvoz_tabel_wiki <- function(leto) {
   if(leto==2010) {tabela <- tabela[c(1,2,3,4,5,6,7,9,10), ]
   tabela <- tabela %>% add_row(NOC = "Â SwedenÂ (SWE)", Gold=5, Silver=2, Bronze=4)}
   else {tabela <- tabela[c(1,2,3,4,5,6,7,8,9,10), ]}
-  colnames(tabela) <- c("drzava", "zlate", "srebrne", "bronaste") 
+  colnames(tabela) <- c("drzava", "zlate", "srebrne", "bronaste")
+  tabela$zlate <- parse_number(tabela$zlate)
   tabela <- melt(tabela, value.name = "stevilo")
   
   if(leto==2016) {tabela[4] <- "2016"}
@@ -56,8 +57,9 @@ uvoz_tabel_wiki <- function(leto) {
   if(leto==2002) {tabela[4] <- "2002"}
   if(leto==2000) {tabela[4] <- "2000"}
   
-  colnames(tabela) <- c("drzava", "lesk","stevilo", "leto") 
+  colnames(tabela) <- c("drzava", "lesk","stevilo", "leto")
   tabela$leto <- parse_number(tabela$leto)
+  tabela$stevilo <- parse_number(tabela$stevilo)
   tabela$drzava <- gsub("Â", "", tabela$drzava)
   tabela$drzava <- gsub("[[:punct:]]", "", tabela$drzava)
   tabela$drzava <- gsub("[[:upper:]][[:upper:]][[:upper:]]", "", tabela$drzava)
