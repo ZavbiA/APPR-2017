@@ -6,7 +6,7 @@ fluidPage(
   
   sidebarLayout(
       sidebarPanel(
-        selectInput("leto", "Leto:", names(skupna_tabela)),
+        selectInput("leto", "Leto:", choises = c(2000,2002,2004,2006,2008,2010,2012,2014,2016)),
         hr(),
         helpText()
       ),
