@@ -65,6 +65,7 @@ uvoz_tabel_wiki <- function(leto) {
   tabela$drzava <- gsub("[[:upper:]][[:upper:]][[:upper:]]", "", tabela$drzava)
   tabela$drzava <- gsub("^.*\\n", "", tabela$drzava)
   tabela$lesk <- parse_character(tabela$lesk)
+  tabela <- tabela[c(4,1,2,3)]
   return(tabela)
 }
 
