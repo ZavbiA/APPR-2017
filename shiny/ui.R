@@ -1,17 +1,17 @@
 library(shiny)
 
-shinyUI(fluidPage(
+fluidPage(
   
-  titlePanel("Slovenske občine"),
+  titlePanel("Olimpijske igre"),
   
-  tabsetPanel(
-      tabPanel("Velikost družine",
-               DT::dataTableOutput("druzine")),
-      
-      tabPanel("Število naselij",
-               sidebarPanel(
-                  uiOutput("pokrajine")
-                ),
-               mainPanel(plotOutput("naselja")))
-    )
-))
+  sidebarLayout(
+      sidebarPanel(
+        selectInput("leto", "Leto:", names(skupna_tabela)),
+        hr(),
+        helpText()
+      ),
+      mailPanel(
+        plotOutput("graf_medalj")
+      )
+  )
+)
