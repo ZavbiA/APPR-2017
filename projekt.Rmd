@@ -151,4 +151,10 @@ tabela5.tidy %>%
   ggtitle("Naraščanje stroškov")
 ```
 
+## Shiny aplikacija
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+shinyAppDir("shiny", options = list(width="100%", height=1000))
+```
+
 ***
