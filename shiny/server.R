@@ -1,19 +1,21 @@
 library(shiny)
 
-if ("server.R" %in% dir()) {
-  setwd("..")
-}
-
-source("lib/libraries.r", encoding = "UTF-8")
-
-source("uvoz/uvoz_tabele4.r", encoding = "UTF-8")
-source("uvoz/uvoz_tabele5.r", encoding = "UTF-8")
-source("uvoz/uvoz_shiny.r", encoding = "UTF-8")
-
-function(input,output) {
+ShinyServer(function(input,output) {
   output$graf_medalj <- renderPlot({
     
-    ggplot(filter(skupna_tabela, Leto==input$leto)) + geom_bar() +
-    ylab="Število osvojenih medalj" + xlab="Država"
+    medalje <- skupna_tabela %>% filter(leto %in% input$leto) %>%
+      group_by(drzava, lesk) %>% summarise(stevilo = sum(stevilo))
+    maxst <- medalje %>% group_by(drzava) %>% summarise(stevilo = sum(stevilo)) %>%
+      summarise(stevilo = max(stevilo)) %>% .$stevilo
+    ggplot(medalje,
+           aes(x = reorder(drzava,
+                           -sapply(drzava,
+                                   . %>% { filter(medalje, drzava == .) %>%
+                                          arrange(desc(lesk)) %>% .$stevilo } %>%
+                                   { .[1]*maxst^2 + .[2]*maxst + .[3] })),
+               y = stevilo, fill = factor(lesk, c("zlate", "srebrne", "bronaste")))) +
+    geom_col(position = "dodge") + ylab("Število osvojenih medalj") + xlab("Država") +
+    guides(fill = guide_legend(title = "Medalje"))
   })
 }
+)
