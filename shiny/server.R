@@ -14,7 +14,11 @@ shinyServer(function(input,output) {
                                           arrange(desc(lesk)) %>% .$stevilo } %>%
                                    { .[1]*maxst^2 + .[2]*maxst + .[3] })),
                y = stevilo, fill = factor(lesk, c("zlate", "srebrne", "bronaste")))) +
-    geom_bar(stat = "identity") + ylab("Število osvojenih medalj") + xlab("Država") +
+    geom_bar(stat = "identity") +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+    ylab("Število osvojenih medalj") + xlab("Država") +
+    guides(fill = guide_legend(title = "Medalje")) +
+    scale_fill_manual(values=c("darkgoldenrod1", "darkgray", "lightsalmon4")) +
     guides(fill = guide_legend(title = "Medalje"))
   })
 }
