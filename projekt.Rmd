@@ -128,7 +128,7 @@ ggtitle("Število osvojenih medalj Slovencev glede na šport") +
 scale_fill_manual(values=c("darkgoldenrod1", "darkgray", "lightsalmon4"))
 ```
 
-Spodnji črtasti grafi prikazujejo trende naraščanja števila dogodkov, števila nastopajočih ter stroškov olimpijskih iger.
+Spodnja črtasta grafa prikazujeta trende naraščanja števila dogodkov ter števila nastopajočih na olimpijskih igrah od leta 1960 do danes. Iz grafov je razvidno, da število dogodkov in število nastopajočih skoraj vsako leto narasteta z izjemo parih let. Skladno s tem naraščajo tudi stroški organizacije iger, kar je razvidno iz tabele med podatki. Na zimskih olimpijskih igrah je bistveno manj dogodkov in manj udeležencev. Rast števila dogodkov in udeležencev na poletnih OI se počasi stabilizira, na zimskih OI pa še kar narašča. Njavečji skok rasti poletnih OI je bil med leti 1980 in 2000.
 
 ```{r graf3, echo = FALSE, fig.align='center'}
 tabela5.tidy %>%
@@ -142,13 +142,6 @@ tabela5.tidy %>%
   ggplot(aes(x=leto, y=st_nastopajocih, colour=tip)) +
   geom_line() + xlab("leto") + ylab("") +
   ggtitle("Naraščanje števila nastopajočih")
-```
-
-```{r graf5, echo = FALSE, fig.align='center', message=FALSE, warning = FALSE}
-tabela5.tidy %>%
-  ggplot(aes(x=leto, y=stroski, colour=tip)) +
-  geom_line() + xlab("leto") + ylab("") +
-  ggtitle("Naraščanje stroškov")
 ```
 
 ## Shiny aplikacija
