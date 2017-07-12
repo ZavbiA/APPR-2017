@@ -1,6 +1,6 @@
 library(shiny)
 
-fluidPage(
+shinyUI(fluidPage(
   
   titlePanel("Olimpijske igre"),
   
@@ -15,4 +15,4 @@ fluidPage(
         plotOutput("graf_medalj")
       )
   )
-)
+))
