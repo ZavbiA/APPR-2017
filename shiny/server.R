@@ -1,6 +1,6 @@
 library(shiny)
 
-ShinyServer(function(input,output) {
+shinyServer(function(input,output) {
   output$graf_medalj <- renderPlot({
     
     medalje <- skupna_tabela %>% filter(leto %in% input$leto) %>%
