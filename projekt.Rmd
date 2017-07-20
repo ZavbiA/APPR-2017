@@ -146,10 +146,10 @@ tabela5.tidy %>%
 
 ## Shiny aplikacija
 
-Naredila sem shiny aplikacijo, v kateri se izbere letnica, vrne pa stolpični graf, ki prikazuje število osvojenih zlatih, srebrnih in bronastih medalj najuspešnejših 10 držav na igrah v izbranem letu.
+Naredila sem shiny aplikacijo, v kateri se izbere letnica, vrne pa stolpični graf, ki prikazuje število osvojenih zlatih, srebrnih in bronastih medalj najuspešnejših 10 držav na igrah v izbranem letu. Poleg se izpišejo še podatki o tipu iger ter mestu in državi prizorišča.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-shinyAppDir("shiny", options = list(width="100%", height=500))
+shinyAppDir("shiny", options = list(width="100%", height=750))
 ```
 
 ***
