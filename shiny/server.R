@@ -22,7 +22,7 @@ shinyServer(function(input,output) {
     guides(fill = guide_legend(title = "Medalje"))
   })
   
-  output$podatki <- renderDataTable({
+  output$podatki <- renderTable({
     info <- tabela4.tidy %>% filter(leto %in% input$leto)
     info[1] <- NULL
     info
