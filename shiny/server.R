@@ -21,5 +21,11 @@ shinyServer(function(input,output) {
     scale_fill_manual(values=c("darkgoldenrod1", "darkgray", "lightsalmon4")) +
     guides(fill = guide_legend(title = "Medalje"))
   })
+  
+  output$podatki <- renderDataTable({
+    info <- tabela4.tidy %>% filter(leto %in% input$leto)
+    info[1] <- NULL
+    info
+  })
 }
 )
