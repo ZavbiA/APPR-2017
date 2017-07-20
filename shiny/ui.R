@@ -13,6 +13,7 @@ shinyUI(fluidPage(
       ),
       mainPanel(
         plotOutput("graf_medalj")
+        dataTableOutput("podatki")
       )
   )
 ))
